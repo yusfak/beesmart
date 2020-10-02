@@ -1,4 +1,7 @@
 <?php
+if(!isset($_COOKIE['beeuser'])){
+  header("Location: login.php");
+} //checking the cookies so the hacker cant injecting it without login first
 include "../../config/server.php";
 $uploaddir = '../../pictures/'; 
 $namafile = basename($_FILES['uploadfile']['name']);
