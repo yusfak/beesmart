@@ -1,4 +1,7 @@
 <?php
+if(!isset($_COOKIE['beeuser']) && $_COOKIE['beelogin'] == "admin"){
+  header("Location: login.php");
+} //checking the cookies so the hacker cant injecting it without login first
 include "../../config/server.php";
 $uploaddir = '../../audio/'; 
 $namafile = basename($_FILES['uploadfile2']['name']);
